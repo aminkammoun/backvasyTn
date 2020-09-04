@@ -5,11 +5,7 @@ const covoiturageSchema = new mongoose.Schema({
     type: String,
     required:true
   },
-  name: {
-    type: String,
-    required: true,
-  },
-  familyName: {
+  username: {
     type: String,
     required: true,
   },
@@ -31,8 +27,14 @@ const covoiturageSchema = new mongoose.Schema({
   description: {
     type: String,
   },
+  nbrePlace: {
+    type: String,
+  },
   bagage: {
     type: Boolean,
+  },
+  idUserPoster: {
+    type: String,
   },
 });
 

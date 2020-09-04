@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
 const convRouter = require("./routes/covoiturage");
+const reservation = require("./routes/reservation");
 
 const covUser = require("./routes/user");
 
@@ -28,6 +29,7 @@ app.use(express.json());
 
 app.use("/covoiturage", convRouter);
 app.use("/user", covUser);
+app.use("/reservation", reservation);
 
 //app.use("/users", usersRoutes);
 

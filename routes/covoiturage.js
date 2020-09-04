@@ -9,23 +9,21 @@ router.get("/", async (req, res) => {
 
   res.send(covoiturage);
 });
-router.get("/:depart", async (req, res) => {
-  const covoiturage = await Covoiturage.find();
-  
-
+router.get("/:id", async (req, res) => {
+  const covoiturage = await Covoiturage.findById(req.params.id);
   res.send(covoiturage);
 });
 
 router.post("/postCov", async (req, res) => {
   let cov = new Covoiturage({
-    name: req.body.name,
-    familyName: req.body.familyName,
+    username: req.body.username,
     type: req.body.type,
     depart: req.body.depart,
     arrive: req.body.arrive,
     time: req.body.time,
     prix: req.body.prix,
     description: req.body.description,
+    nbrPlace: req.body.nbrPlace,
     bagage: req.body.bagage,
     idUserPoster: req.body.idUserPoster,
   });

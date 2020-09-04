@@ -23,9 +23,7 @@ router.post("/signIn", async (req, res, next) => {
             });
           } else {
             const user = new User({
-              name: req.body.name,
-              familyname: req.body.familyname,
-              carModel: req.body.carModel,
+              username: req.body.username,
               phone: req.body.phone,
               email: req.body.email,
               password: hash,
@@ -53,7 +51,7 @@ router.post("/signIn", async (req, res, next) => {
 });
 
 router.post("/login", (req, res, next) => {
-  User.find({ email: req.body.email })
+  User.find({ username: req.body.username })
     .exec()
     .then((user) => {
       if (user.length < 1) {
@@ -70,7 +68,7 @@ router.post("/login", (req, res, next) => {
         if (result) {
           const token = jwt.sign(
             {
-              email: user[0].email,
+              username: user[0].username,
               userId: user[0].id,
             },
             "secret",
