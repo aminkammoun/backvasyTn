@@ -23,6 +23,18 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  fumer: {
+    type: String,
+    required: false,
+  },
+  climat: {
+    type: String,
+    required: false,
+  },
+  rating: {
+    type: Number,
+    required: false,
+  },
 });
 
 module.exports = mongoose.model("User", userSchema);

@@ -22,6 +22,7 @@ router.post("/postCov", async (req, res) => {
     arrive: req.body.arrive,
     time: req.body.time,
     prix: req.body.prix,
+    phone: req.body.phone,
     description: req.body.description,
     nbrPlace: req.body.nbrPlace,
     bagage: req.body.bagage,

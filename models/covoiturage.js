@@ -36,6 +36,9 @@ const covoiturageSchema = new mongoose.Schema({
   idUserPoster: {
     type: String,
   },
+  phone: {
+    type: Number,
+  },
 });
 
 module.exports = mongoose.model("Covoiturage", covoiturageSchema);
